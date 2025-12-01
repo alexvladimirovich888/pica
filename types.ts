@@ -4,7 +4,7 @@ import React from 'react';
 export interface Pokemon {
   id: string;
   name: string;
-  type: 'Fire' | 'Water' | 'Grass' | 'Electric' | 'Psychic' | 'Dragon';
+  type: 'Fire' | 'Water' | 'Grass' | 'Electric' | 'Psychic' | 'Dragon' | 'Ghost' | 'Normal' | 'Fighting' | 'Ice' | 'Rock' | 'Ground' | 'Fairy' | 'Steel' | 'Dark' | 'Flying' | 'Bug' | 'Poison';
   hp: number;
   attack: number;
   defense: number;

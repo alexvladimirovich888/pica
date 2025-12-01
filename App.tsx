@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import Header from './components/Header';
 import Navigation from './components/Navigation';
-import Carousel from './components/Carousel';
+import CardGrid from './components/CardGrid';
 import Arena from './components/Arena';
 import { TabId, Pokemon } from './types';
 import { POKEMON_DATA } from './constants';
@@ -17,7 +17,7 @@ const App: React.FC = () => {
     setActiveTab(id);
   };
 
-  // Handle Pokemon selection from Carousel
+  // Handle Pokemon selection from Grid
   const handlePokemonSelect = (pokemon: Pokemon) => {
     setSelectedPokemon(pokemon);
     // Optional: vibrate or sound effect here
@@ -27,7 +27,7 @@ const App: React.FC = () => {
     switch (activeTab) {
       case 'cards':
         return (
-          <Carousel 
+          <CardGrid 
             pokemons={POKEMON_DATA} 
             selectedId={selectedPokemon?.id || null} 
             onSelect={handlePokemonSelect} 
@@ -74,10 +74,10 @@ const App: React.FC = () => {
           <AnimatePresence mode="wait">
             <motion.div
               key={activeTab}
-              initial={{ opacity: 0, scale: 0.95, y: 10 }}
-              animate={{ opacity: 1, scale: 1, y: 0 }}
-              exit={{ opacity: 0, scale: 1.05, y: -10 }}
-              transition={{ duration: 0.3 }}
+              initial={{ opacity: 0, scale: 0.98 }}
+              animate={{ opacity: 1, scale: 1 }}
+              exit={{ opacity: 0, scale: 1.02 }}
+              transition={{ duration: 0.2 }}
               className="h-full w-full"
             >
               {renderContent()}
